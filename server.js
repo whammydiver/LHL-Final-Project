@@ -45,15 +45,15 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const customerRoutes = require("./routes/customers");
+const userRoutes = require("./routes/users");
 const navigationRoutes = require("./routes/navigation");
-const renderMenuRoutes = require("./routes/renderMenu");
+const menuRoutes = require("./routes/menu.js");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/api/customers", customerRoutes(db));
+app.use("/api/menu", menuRoutes(db));
 app.use("/api/navigation", navigationRoutes(db));
-app.use("/api/renderMenu", renderMenuRoutes(db));
+app.use("/api/users", userRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
@@ -62,8 +62,9 @@ app.use("/api/renderMenu", renderMenuRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  const customerCookie = req.session.customerCookie;
-  res.render("index", {customerCookie});
+  // const customerCookie = req.session.customerCookie;
+  // res.render("index", {customerCookie});
+  res.render("./src/App.js");
 });
 
 app.listen(PORT, () => {
