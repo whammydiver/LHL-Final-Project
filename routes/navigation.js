@@ -4,46 +4,34 @@ const router  = express.Router();
 
 module.exports = (db) => {
 
-  router.get("/", (req, res) => {
-    //const customerCookie = req.session.customerCookie;
-    // res.render("index", {customerCookie});
-    res.render("index");
-  });
+  // router.get("/profile/:id", (req, res) => {
+    // makes a DB call to retrive user profile info and assign it to an array? or object? variableName
+    // res.send(completeMenuVariableName);
+  // });
 
-  router.get("/menu", (req, res) => {
-    // const customerCookie = req.session.customerCookie;
-    // res.render("urls_menu", {customerCookie});
-    res.render("urls_menu");
-  });
+  // router.get("/menu/:id", (req, res) => {
+    // makes a DB call retrieve the stored menu data for the userID and stores it in an array? or object? 
+    // res.send(randomMealVariableName);
+  // });
 
-  router.get("/menu/:meal", (req, res) => {
-    // const customerCookie = req.session.customerCookie;
-    // res.render("FullPageMenuItem", {customerCookie});
-    res.render("FullPageMenuItem");
-  });
+  // router.get("/menu/:meal", (req, res) => {
+    // may not be needed if the meal data is stored in state somewhere in the react app
+    // otherwise, makes a call based on mealID and returnd relevant details
+    // res.send(fullMealDealMadeUpVariableName);
+  // });
 
-  router.get("/login", (req, res) => {
-    // const customerCookie = req.session.customerCookie;
-    // res.render("Login", {customerCookie});
-    res.render("Login");
-  });
+  // router.get("/login", (req, res) => {
+    // calls the DB and verifies the user exists
+    // res.send(loginApprovedOrDenied);
+  // });
 
-  router.get("/logout", (req, res) => {
-    req.session = null;
-    //res.render("index", {customerCookie: undefined});
-    res.render("index");
-  })
-
-  router.get("/signup", (req, res) => {
-    // const customerCookie = req.session.customerCookie;
-    // res.render("SignUp", {customerCookie});
-    res.render("SignUp");
-  });
+  // router.get("/logout", (req, res) => {
+  // almost certainly will be managed with state
 
 //etc ...
 
 
 
-  return router;
+  // return router;
 
 };
