@@ -7,10 +7,16 @@ function App() {
       <Header />
       <div className="App">
         <div className="sidebar">
-          <p className="sidebar-text">links to:</p>
-          <li className="sidebar-text">About</li>
-          <li className="sidebar-text">How To</li>
-          <li className="sidebar-text">Menu</li>
+          <div className="log-in">
+           <span className="sidebar-text">Log-in</span> <br />
+           <span className="sidebar-text">Sign-up</span>
+          </div>
+          <br/>
+          <div>
+            <p className="sidebar-text">Menu</p>
+            <p className="sidebar-text">Grocery List</p>
+            <p className="sidebar-text">Settings</p>
+          </div>
         </div>
         <div className="mainpage">
           <h1>Home Page "/"</h1>
