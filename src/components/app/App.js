@@ -1,5 +1,8 @@
-import './App.css';
-import Header from './Header'
+import "./App.css";
+import Header from "../../Header";
+import Dashboard from "../user_dashboard/Dashboard";
+import DietarySettings from "../user_dashboard/DietarySettings";
+import AccountInfo from "../user_dashboard/AccountInfo";
 
 function App() {
   return (
