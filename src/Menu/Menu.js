@@ -1,4 +1,4 @@
-import MiniMenuItem from "./MiniMenuItem";
+import MiniMenuItem from "./SingleMenuItem";
 
 export default function Menu() {
   return (
