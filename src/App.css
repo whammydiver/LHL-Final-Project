@@ -8,22 +8,23 @@
   flex-direction: row nowrap;
   justify-content: space-around;
   height: 50px;
-  background-color: #ee8d2b;
-  color: #772f1a;
+  background-color: #61dafb;
+  color: black
 }
+
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   height: 400px;
   width: 15%;
-  background-color: #f2a65a;
-  color: #772f1a;
+  background-color: burlywood; 
+  color: red;
 }
 
 .sidebar-text {
-  margin: 5px;
+  margin: 5px
 }
 
 .mainpage {
@@ -33,5 +34,14 @@
   width: 85%;
   justify-content: center;
   align-items: center;
-  background-color: #5af2a6;
+  background-color: green;
+  
+}
+
+.log-in {
+  flex-direction: column;
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
 }
