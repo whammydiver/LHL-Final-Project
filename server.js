@@ -5,12 +5,11 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const morgan = require("morgan");
-const bodyParser = require('body-parser');
-const cookieSession = require('cookie-session');
-
-
+const bodyParser = require("body-parser");
+const cookieSession = require("cookie-session");
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -23,11 +22,14 @@ db.connect();
 // The :status token will be colored red for server error codes, yellow for client
 // error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan("dev"));
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(cookieSession({
-  name: 'session',
-  keys: ['fantasticMrFox']
-}));
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["fantasticMrFox"],
+  })
+);
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -44,18 +46,14 @@ app.use(
 app.use(express.static("public"));
 
 // Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
 const userRoutes = require("./routes/users");
 const navigationRoutes = require("./routes/navigation");
 const menuRoutes = require("./routes/menu.js");
 
 // Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
 app.use("/api/menu", menuRoutes(db));
 app.use("/api/navigation", navigationRoutes(db));
 app.use("/api/users", userRoutes(db));
-
-// Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
@@ -70,4 +68,3 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
-
