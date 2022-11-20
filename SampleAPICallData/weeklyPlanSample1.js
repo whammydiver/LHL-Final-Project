@@ -4,6 +4,8 @@
 // diet=vegetarian
 // exclude Shellfish
 
+
+
 const weeklyDiet =
 {
   "week": {
@@ -247,3 +249,23 @@ const weeklyDiet =
       }
   }
 }
+
+const weekDays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+
+const mealRenderArray = [];
+
+for (let day in weekDays) {
+    for (let x = 0; x < 3; x ++) {
+        let mealObject = {}
+        mealObject.day = weekDays[day];
+        mealObject.title = weeklyDiet.week[weekDays[day]].meals[x].title;
+        mealObject.servings = weeklyDiet.week[weekDays[day]].meals[x].servings;
+        mealObject.link = weeklyDiet.week[weekDays[day]].meals[x].sourceUrl;
+        // console.log(mealObject);
+        mealRenderArray.push(mealObject);
+    }
+}
+
+//export default function Menu(mealRenderArray)
+
+console.log(mealRenderArray);
