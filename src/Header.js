@@ -1,6 +1,6 @@
-import './App.css';
+import "./components/app/App";
 
-export default function Header () {
+export default function Header() {
   return (
     <div className="header">
       <h3>Login</h3>
@@ -12,8 +12,6 @@ export default function Header () {
     </div>
   );
 }
-
-
 
 // ROUTES
 
